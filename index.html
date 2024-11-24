@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popband Looper</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+</head>
+<body>
+  <h1>Popband Looper</h1>
+  <div id="console">
+    <div id="tracks">
+      <!-- Track 1: Drums -->
+      <div class="track">
+        <h3>Drums</h3>
+        <img src="images/drums.png" alt="Drums" class="track-image">
+        <button id="mute1">Mute</button>
+        <input type="range" id="volume1" min="0" max="1" step="0.01" value="1">
+      </div>
+
+      <!-- Track 2: Keys -->
+      <div class="track">
+        <h3>Keys</h3>
+        <img src="images/keys.png" alt="Keys" class="track-image">
+        <button id="mute2">Mute</button>
+        <input type="range" id="volume2" min="0" max="1" step="0.01" value="1">
+      </div>
+
+      <!-- Track 3: Guitar -->
+      <div class="track">
+        <h3>Guitar</h3>
+        <img src="images/guitar.png" alt="Guitar" class="track-image">
+        <button id="mute3">Mute</button>
+        <input type="range" id="volume3" min="0" max="1" step="0.01" value="1">
+      </div>
+
+      <!-- Track 4: Bass -->
+      <div class="track">
+        <h3>Bass</h3>
+        <img src="images/bass.png" alt="Bass" class="track-image">
+        <button id="mute4">Mute</button>
+        <input type="range" id="volume4" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+
+    <div id="controls">
+      <button class="control-button" id="playAll">Play All</button>
+      <button class="control-button" id="stopAll">Stop All</button>
+    </div>
+  </div>
+
+  <script src="looper.js"></script>
+</body>
+</html>

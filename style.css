@@ -1,0 +1,142 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  background-color: #444;
+  padding: 20px;
+  margin: 0;
+  font-size: 28px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mixing Console Container */
+#console {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Track Layout */
+#tracks {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 30px;
+}
+
+.track {
+  background-color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  width: 160px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Track title */
+.track h3 {
+  font-size: 18px;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+  color: #4CAF50;
+}
+
+/* Track image */
+.track .track-image {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Mute Button */
+.track button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.track button:hover {
+  background-color: #45a049;
+}
+
+.track button:active {
+  background-color: #3e8e41;
+}
+
+/* Volume Slider */
+.track input[type="range"] {
+  appearance: none; /* Standard property for compatibility */
+  -webkit-appearance: none; /* Vendor-prefixed for WebKit browsers */
+  width: 100%;
+  height: 20px;
+  background: #4CAF50;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+.track input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: #4CAF50;
+  border-radius: 10px;
+}
+
+.track input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* WebKit-specific */
+  appearance: none; /* Standard property */
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid #4CAF50;
+  margin-top: -10px;
+}
+
+/* Controls */
+#controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.control-button {
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color: #0056b3;
+}
+
+.control-button:active {
+  background-color: #004080;
+}

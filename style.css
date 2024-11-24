@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #222; /* Dark background */
+  background-color: #9a9292; /* Dark background */
   margin: 0;
   padding: 0;
 }
@@ -54,7 +54,7 @@ button:active, .volume-slider:active {
 
 /* Title and track names styles */
 h1, .track-name {
-  color: white; /* White color for better contrast */
+  color: white !important; /* Force white color for better contrast */
   font-size: 24px;
   text-align: center;
   margin-bottom: 15px;
@@ -62,7 +62,7 @@ h1, .track-name {
 
 /* Ensuring track names inside .track are white */
 .track .track-name {
-  color: white; /* Ensures track names are white */
+  color: white !important; /* Ensures track names are white */
   font-size: 20px;
 }
 

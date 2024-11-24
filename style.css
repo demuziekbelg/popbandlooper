@@ -140,3 +140,94 @@ h1 {
 .control-button:active {
   background-color: #004080;
 }
+
+/* Default styles (for larger screens like desktops) */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.fader {
+  margin: 20px 0;
+  width: 200px;
+}
+
+button, .volume-slider {
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Media Query for mobile (phones and small screens) */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+
+  .track {
+      margin: 15px 0;
+  }
+
+  /* Make buttons larger and stack them vertically */
+  button, .volume-slider {
+      font-size: 18px;
+      padding: 15px;
+      width: 80%;
+  }
+
+  .fader {
+      width: 150px;  /* Make the fader slider narrower on mobile */
+  }
+
+  .track img {
+      width: 50px;
+      height: 50px;
+  }
+}
+
+/* Media Query for very small screens (portrait phones) */
+@media (max-width: 480px) {
+  .track {
+      margin: 10px;
+  }
+
+  button, .volume-slider {
+      font-size: 20px;
+      padding: 18px;
+      width: 90%;
+  }
+
+  .fader {
+      width: 120px; /* Even narrower fader on very small screens */
+  }
+
+  .track img {
+      width: 40px;
+      height: 40px;
+  }
+}

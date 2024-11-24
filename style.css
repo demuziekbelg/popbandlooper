@@ -231,3 +231,16 @@ button, .volume-slider {
       height: 40px;
   }
 }
+
+// Example to dynamically adjust the layout on window resize
+window.addEventListener("resize", function() {
+    const screenWidth = window.innerWidth;
+    
+    // Example: Adjust font size based on screen size
+    const buttonElements = document.querySelectorAll('button');
+    if (screenWidth < 768) {
+        buttonElements.forEach(button => button.style.fontSize = "20px");
+    } else {
+        buttonElements.forEach(button => button.style.fontSize = "16px");
+    }
+});

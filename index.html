@@ -3,50 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popband Looper</title>
+  <title>Popband Multitrack</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Include Howler.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 </head>
 <body>
-  <h1>Popband Looper</h1>
-  <div id="console">
-    <div id="tracks">
-      <!-- Track 1: Drums -->
-      <div class="track">
-        <h3>Drums</h3>
-        <img src="images/drums.png" alt="Drums" class="track-image">
-        <button id="mute1">Mute</button>
-        <input type="range" id="volume1" min="0" max="1" step="0.01" value="1">
+  <div class="container">
+    <h1>Popband Multitrack</h1>
+    <div class="tracks">
+      <!-- Track 1 -->
+      <div class="track" id="track1" onclick="toggleMute(0)">
+        <img src="images/drums.png" alt="Track 1">
       </div>
-
-      <!-- Track 2: Keys -->
-      <div class="track">
-        <h3>Keys</h3>
-        <img src="images/keys.png" alt="Keys" class="track-image">
-        <button id="mute2">Mute</button>
-        <input type="range" id="volume2" min="0" max="1" step="0.01" value="1">
+      <!-- Track 2 -->
+      <div class="track" id="track2" onclick="toggleMute(1)">
+        <img src="images/keys.png" alt="Track 2">
       </div>
-
-      <!-- Track 3: Guitar -->
-      <div class="track">
-        <h3>Guitar</h3>
-        <img src="images/guitar.png" alt="Guitar" class="track-image">
-        <button id="mute3">Mute</button>
-        <input type="range" id="volume3" min="0" max="1" step="0.01" value="1">
+      <!-- Track 3 -->
+      <div class="track" id="track3" onclick="toggleMute(2)">
+        <img src="images/guitar.png" alt="Track 3">
       </div>
-
-      <!-- Track 4: Bass -->
-      <div class="track">
-        <h3>Bass</h3>
-        <img src="images/bass.png" alt="Bass" class="track-image">
-        <button id="mute4">Mute</button>
-        <input type="range" id="volume4" min="0" max="1" step="0.01" value="1">
+      <!-- Track 4 -->
+      <div class="track" id="track4" onclick="toggleMute(3)">
+        <img src="images/bass.png" alt="Track 4">
       </div>
     </div>
 
-    <div id="controls">
-      <button class="control-button" id="playAll">Play All</button>
-      <button class="control-button" id="stopAll">Stop All</button>
+    <!-- Play All and Stop All Buttons -->
+    <div class="controls">
+      <button id="playAll" onclick="playAll()">Play</button>
+      <button id="stopAll" onclick="stopAll()">Stop</button>
     </div>
   </div>
 

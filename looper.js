@@ -1,59 +1,56 @@
-// Define Howler.js sounds for each track
+// Array to store Howler.js sound objects for 4 tracks
 const tracks = [
   new Howl({
-    src: ['audio/drums.mp3'], // Replace with the actual path to your audio file
-    loop: true,
-    volume: 1,
+      src: ['audio/drums.mp3'],
+      loop: true,  // Make the track loop
+      volume: 1,   // Initial volume (100%)
   }),
   new Howl({
-    src: ['audio/keys.mp3'], // Replace with the actual path to your audio file
-    loop: true,
-    volume: 1,
+      src: ['audio/keys.mp3'],
+      loop: true, 
+      volume: 1,
   }),
   new Howl({
-    src: ['audio/guitar.mp3'], // Replace with the actual path to your audio file
-    loop: true,
-    volume: 1,
+      src: ['audio/guitar.mp3'],
+      loop: true, 
+      volume: 1,
   }),
   new Howl({
-    src: ['audio/bass.mp3'], // Replace with the actual path to your audio file
-    loop: true,
-    volume: 1,
-  }),
+      src: ['audio/bass.mp3'],
+      loop: true, 
+      volume: 1,
+  })
 ];
 
-// Handle mute buttons
-document.getElementById('mute1').addEventListener('click', () => toggleMute(0));
-document.getElementById('mute2').addEventListener('click', () => toggleMute(1));
-document.getElementById('mute3').addEventListener('click', () => toggleMute(2));
-document.getElementById('mute4').addEventListener('click', () => toggleMute(3));
+// Flag to track the mute state of each track
+let muteState = [false, false, false, false];
 
-function toggleMute(trackIndex) {
-  const track = tracks[trackIndex];
-  track.volume(track.volume() === 0 ? 1 : 0); // Toggle volume between 1 and 0
+// Function to toggle mute on click of track image
+function toggleMute(index) {
+  if (muteState[index]) {
+      // Unmute the track
+      tracks[index].volume(1);
+      document.getElementById(`track${index + 1}`).style.opacity = 1;
+  } else {
+      // Mute the track
+      tracks[index].volume(0);
+      document.getElementById(`track${index + 1}`).style.opacity = 0.5;
+  }
+  
+  // Toggle mute state
+  muteState[index] = !muteState[index];
 }
 
-// Handle volume sliders
-document.getElementById('volume1').addEventListener('input', (e) => setVolume(0, e.target.value));
-document.getElementById('volume2').addEventListener('input', (e) => setVolume(1, e.target.value));
-document.getElementById('volume3').addEventListener('input', (e) => setVolume(2, e.target.value));
-document.getElementById('volume4').addEventListener('input', (e) => setVolume(3, e.target.value));
-
-function setVolume(trackIndex, value) {
-  const track = tracks[trackIndex];
-  track.volume(parseFloat(value)); // Set volume from the slider
+// Function to play all tracks
+function playAll() {
+  // Stop all tracks before playing
+  tracks.forEach(track => {
+    track.stop();  // Ensure the track is stopped before playing
+    track.play();  // Start playing the track
+  });
 }
 
-// Play All button
-document.getElementById('playAll').addEventListener('click', () => {
-  tracks.forEach((track) => {
-    if (!track.playing()) track.play(); // Play only if not already playing
-  });
-});
-
-// Stop All button
-document.getElementById('stopAll').addEventListener('click', () => {
-  tracks.forEach((track) => {
-    track.stop(); // Stop all tracks
-  });
-});
+// Function to stop all tracks
+function stopAll() {
+  tracks.forEach(track => track.stop());
+}
